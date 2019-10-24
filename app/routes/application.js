@@ -11,9 +11,6 @@ export default Route.extend({
         transition.abort();
         return later(function() {
           let transition_name = transition.to.name;
-          if (transition_name.endsWith(".index")) {
-            transition_name = "secure.customer";
-          }
           let url = router.urlFor(transition_name, transition.to.params);
           // Workaround for a bug in ember that causes the router to fail if the url starts with a slash
           if (url.startsWith("/")) {
